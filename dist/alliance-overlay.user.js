@@ -30,6 +30,9 @@ let colorMap = {};
 function getAllianceColor(allianceKey) {
     if (!colorMap[allianceKey]) {
         let seed = allianceData[allianceKey].name;
+        if(allianceData[allianceKey].name == 'Ypsilon Pact'){
+           seed = 0;
+        }
         let [hue,sat,lum] = randomColor({
             hue: "random",
             luminosity: "light",
